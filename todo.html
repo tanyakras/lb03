@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Список дел</title>
+    <body>
+<img src="2.jpg">
+<form method="post" action="add">
+    Задача: <input name="task">
+    <input type="submit" value="добавить">
+</form>
+<ol>
+    <#list tasks as task>
+    <!--create table todo(
+    id int identity,
+    text varchar(100)
+    )-->
+
+    <li>
+        <form method="post" action="delete">
+            ${task.what}
+            <input type="submit" value="удалить">
+            <input name="id" type="hidden" value="${task.id}">
+        </form>
+    </li>
+    </#list>
+</ol>
+
+</body>
+
+</head>
+</html>
